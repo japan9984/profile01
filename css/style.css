@@ -1,5 +1,3 @@
-
-
 body{
   margin: 0;
   background: #333;
@@ -73,14 +71,16 @@ body{
   text-align: center;
   color: #fff;
 }
-#splash-logo{
+  #splash-logo{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-}
+  margin: 0;
+  padding: 0;
+} 
 
-.fadeUp{
+/* .fadeUp{
   animation-name: fadeUpAnime;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
@@ -96,7 +96,7 @@ body{
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
 
 body.appear{
     background: #fff;
@@ -335,7 +335,7 @@ main{
 /* 重なる */
 #fix:before{
   position: fixed;
-  content: "";
+  /* content: ""; */
   top: 0;
   left: 0;
   width: 100%;
@@ -352,6 +352,7 @@ main{
   position: relative;
   z-index: 5;
   background: #fff;
+  margin: -10px;
 }
 
 /* modalwindow */
@@ -647,4 +648,16 @@ main{
 
 
 
-
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
