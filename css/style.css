@@ -1,0 +1,650 @@
+
+
+body{
+  margin: 0;
+  background: #333;
+}
+
+.title{
+  font-size: 28px;
+  text-align: center;
+}
+
+
+/* profile */
+#top0 h1{
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  font-size: 32px;
+  text-align: center;
+  color: #fff;
+  z-index: 3;
+
+}
+
+#top0 p{
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  text-align: center;
+  color: #fff;
+  z-index: 3;
+}
+
+#top0{
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto 0;
+  background:#fff;
+}
+
+#video-area{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#background1{
+  overflow: hidden;
+  /* object-fit: cover; */
+  z-index: -0.5;
+  top: 50%;
+  left: 50%;
+  translate: (-50%,-50%);
+  width: 178vh;
+  height: 56.25vw;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* トビラ */
+#splash{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  z-index: 99999;
+  text-align: center;
+  color: #fff;
+}
+#splash-logo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.fadeUp{
+  animation-name: fadeUpAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime{
+  from{
+    opacity: o;
+    transform: translateY(100px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.appear{
+    background: #fff;
+}
+
+.splashbg1,
+.splashbg2{
+  display: none;
+}
+
+body.appear .splashbg1,
+body.appear .splashbg2{
+  display: block;
+}
+
+body.appear .splashbg1{
+  animation-name: PageAnime;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  /* content: ""; */
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 50%;
+  transform: scaleX(1);
+  background: #333;
+}
+
+@keyframes PageAnime{
+  0%{
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  50%{
+    transform-origin: right;
+  }
+  100%{
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+
+body.appear .splashbg2{
+  animation-name: PageAnime2;
+  animation-duration:1.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  content: "";
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 50%;
+  transform: scaleX(1);
+  background: #333;
+}
+
+@keyframes PageAnime2{
+  0%{
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+  50%{
+    transform-origin: left;
+  }
+  100%{
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+}
+
+#container{
+  opacity: 0;
+}
+
+  body.appear #container{
+  animation-name: PageAnimeAppear;
+  animation-duration: 1s;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+/* humbergermenu */
+
+#open0,#close0{
+  color:#fff;
+  position: fixed;
+  right: 0;
+  padding-right: 30px;
+}
+
+header{
+  display: flex;
+  padding: 0 16px;
+}
+
+header h1{
+  margin: 0;
+  font-size: 22px;
+  line-height: 64px;
+}
+
+.sp-menu{
+  margin-left: auto;
+  z-index: 5;
+}
+
+.sp-menu #open0{
+  font-size:32px;
+  line-height:64px;
+  cursor: pointer;
+}
+
+.sp-menu #open0.hide{
+  display: none;
+}
+
+main{
+  padding:0 16px;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.95);
+  text-align: center;
+  padding:64px;
+  opacity: 0;
+  pointer-events: none;    /*これ大事*/
+  transition: opacity .6s;
+  z-index: 1;
+}
+
+.overlay.show{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay #close0{
+  position: absolute;
+  top:16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.overlay ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay li{
+  margin-top: 24px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s,transform 0.3s;
+}
+
+.overlay.overlay.show li{
+  opacity: 1;
+  transform: none;
+}
+
+ .overlay a{
+   color: black;
+ }
+
+.overlay.show li:nth-child(1){
+  transition-delay: .1s;
+}
+.overlay.show li:nth-child(2){
+  transition-delay: .2s;
+}
+.overlay.show li:nth-child(3){
+  transition-delay: .3s;
+}
+
+.pc-menu {
+  display:none;
+  z-index: 5;
+  position: fixed;
+  right: 0;
+  padding-right: 30px;
+}
+
+@media (min-width: 600px){
+  .pc-menu{
+    display:block;
+    margin-left: auto;
+  }
+
+  .pc-menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .pc-menu a{
+    display: block;
+    width: 80px;
+    line-height: 64px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .pc-menu a:hover{
+    background: #333;
+  }
+
+  .sp-menu{
+    display: none;
+  }
+
+}
+
+/* 重なる */
+#fix:before{
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -5;
+  background: #fff;
+
+}
+#fix{
+  position: relative;
+}
+
+#w{
+  position: relative;
+  z-index: 5;
+  background: #fff;
+}
+
+/* modalwindow */
+.modalwindow{
+ padding-top: 50px;
+  margin-bottom: 100px;
+}
+
+.modalwindow #open,#close{
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 16px auto 0;
+  background-color: #e2e2e2;
+}
+
+.modalwindow #open{
+  box-shadow:0 5px 7px rgba(0,0,0,0.5);
+}
+
+.modalwindow #open:hover{
+  font-weight: bold;
+  box-shadow:0 15px 21px rgba(0,0,0,0.7);
+}
+.modalwindow #mask{
+  background: rgba(0,0,0,0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.modalwindow #modal{
+  background: #fff;
+  width: 300px;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left:0;  /*1*/
+  right:0; /*2*/
+  margin:0 auto; /*3*/
+                               /*1,2,3でabsoluteで中央揃え*/
+  transition: transform 0.4s;
+  z-index: 1;
+}
+
+.modalwindow #modal > p {
+  margin: 0 0 20px;
+}
+
+.modalwindow #mask.hidden{
+  display: none;
+}
+
+.modalwindow #modal.hidden{
+  transform: translate(0,-2000px);
+}
+
+/* carousel */
+
+.carousel0 .carousel{
+  width: 80%;
+  margin: 16px auto;
+}
+
+.carousel0 .container{
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel0 ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  transition: transform .3s;
+}
+
+.carousel0 li{
+  height: 100%;
+  min-width: 100%;
+}
+
+.carousel0 li img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#prev,
+#next{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0,0,0,.8);
+  color: #fff;
+  font-size: 24px;
+  padding: 0 8px 4px;
+  cursor: pointer;
+}
+
+#prev:hover,
+#next:hover{
+  opacity: .8;
+}
+
+#prev{
+  left: 0;
+}
+
+#next{
+  right: 0;
+}
+
+.carousel0 .hidden{
+  display: none;
+}
+
+.carousel0 nav{
+  margin-top: 16px;
+  text-align: center;
+}
+
+.carousel0 nav button + button{
+  margin-left: 8px;
+}
+
+.carousel0 nav button{
+  border: none;
+  width: 16px;
+  height: 16px;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel0 nav .current{
+  background: #999;
+}
+
+.carousel0 h1{
+  text-align: center;
+}
+
+/* tabmenu  */
+
+.tabmenu .container{
+  margin: 30px auto;
+  width: 80%;
+}
+
+.tabmenu .menu{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.tabmenu .menu li a{
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  padding: 8px 0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.tabmenu .menu li a:not(.active):hover{
+  opacity: 0.5;
+  transition: opacity .4s;
+}
+
+.tabmenu .menu li a.active{
+  background: #333;
+  color: #fff;
+}
+
+.tabmenu .content.active{
+  background: #333;
+  color: #fff;
+  min-height: 150px;
+  padding: 12px;
+  display: block;
+}
+
+.tabmenu .content{
+  display: none;
+}
+
+.tabmenu h1{
+  text-align: center;
+}
+
+
+/* accordion */
+
+.accordion{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.accordion h1{
+  padding: 8px 16px;
+  margin-bottom: 16px;
+}
+
+.accordion dl{
+  margin: 0;
+}
+
+.accordion dt{
+  padding: 8px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.accordion dt::before{
+  content:'Q.';
+}
+
+.accordion dt::after{
+  content:'+';
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  transition: transform .3s;
+}
+
+.accordion dl>div.appear dt::after{
+  transform: rotate(45deg);
+}
+
+.accordion dd{
+  margin: 0;
+  padding: 8px;
+  display: none;
+}
+
+.accordion dd::before{
+  content: 'A.';
+}
+
+.accordion dl>div.appear dd{
+  display: block;
+  animation: .3s fadeIn;
+}
+
+.accordion dl>div{
+  margin-bottom: 8px;
+}
+
+.accordion h1{
+  text-align: center;
+}
+
+.skilla{
+  font-weight: bold;
+}
+
+.skillq:hover{
+  font-weight: bold;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100%{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 601px){
+  .title{
+    font-size: 24px;
+  }
+  }
+
+
+
+
+
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+
+  <!-- トビラ -->
+  <div id="splash">
+    <div id="splash-logo" class="fadeUp">loading</div>
+  </div>
+
+  <div class="splashbg1"></div>
+  <div class="splashbg2"></div>
+
+  <div id="container">
+    <!-- 閉じタグは内容の下 -->
+
+    <div id="fix">
+    <!-- 閉じタグはプロフィールの下 -->
+
+    <!-- ハンバーガーメニュー -->
+    <div class="humbergermenu">
+      <header>
+        <div class="pc-menu">
+          <nav>
+            <ul>
+              <li><a href="#top2">趣味</a></li>
+              <li><a href="#top3">経歴</a></li>
+              <li><a href="#top4">スキル</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="sp-menu">
+          <span class="material-icons" id="open0">menu</span>
+        </div>
+      </header>
+
+      <div class="overlay">
+        <span class="material-icons" id="close0">close</span>
+        <nav>
+          <ul>
+            <li class="link1"><a href="#top2">趣味</a></li>
+            <li class="link2"><a href="#top3">経歴</a></li>
+            <li class="link3"><a href="#top4">スキル</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- プロフィール -->
+    <div id="top0">
+      <h1 id="name">三枝右弥</h1>
+      <p>動きのあるサイト制作が得意です</p>
+    </div>
+    <div id="video-area">
+      <video id="background1" playsinline muted autoplay loop src="images/earth2.mp4"></video>
+    </div>
+    </div>
+
+    <!-- 重なる -->
+    <div id="w">
+
+
+      <!-- モーダルウィンドウ -->
+      <div class="modalwindow" id="top1">
+        <section id="modal" class="hidden">
+          <p>
+          <p>私は、挑戦を好む性格です。学生時代には自転車で四国一周や二輪車のエンジンボアアップなどにチャレンジしました。<br>
+            社会人になってからも、JNCC(全日本クロスカントリー選手権)出場やフルマラソン完走など行動力があります。</p>
+          </p>
+          <div id="close">
+            閉じる
+          </div>
+        </section>
+        <h1 class="title">性格</h1>
+        <div id="open">
+          PR
+        </div>
+
+        <div id="mask" class="hidden"></div>
+      </div>
+      <!-- タブメニュー -->
+      <div class="tabmenu" id="top3">
+        <h1 class="title">経歴</h1>
+        <div class="container">
+
+          <ul class="menu">
+            <li><a href="#" class="active" data-id="about">学歴</a></li>
+            <li><a href="#" data-id="service">職歴</a></li>
+            <!-- <li><a href="#" data-id="contact">プログラミング歴</a></li> -->
+          </ul>
+
+          <section class="content active" id="about">
+            ＜2014年3月＞<br>
+            高専 機械工学科 卒業
+          </section>
+
+          <section class="content" id="service">
+            ＜2014年4月〜2019年1月＞<br>
+            二輪車の研究・開発を行いました。<br>
+            ＜2019年2月〜2019年6月＞<br>
+            期間雇用者としてコールセンター業を行いました。<br>
+            ＜2019年7月〜現在＞<br>
+            自営業で軽トラック運送業を行っています。
+          </section>
+        </div>
+      </div>
+      <!-- カルーセル -->
+      <div class="carousel0" id="top2">
+        <h1 class="title">趣味</h1>
+        <section class="carousel">
+          <div class="container">
+            <ul id="carouselimg">
+              <li><img src="images/9.png" alt=""></li>
+              <li><img src="images/10.png" alt=""></li>
+              <li><img src="images/6.png" alt=""></li>
+              <li><img src="images/4.png" alt=""></li>
+            </ul>
+
+            <button id="prev">&laquo;</button>
+            <button id="next">&raquo;</button>
+          </div>
+
+          <nav id="nav0">
+          </nav>
+        </section>
+      </div>
+      <!-- アコーディオン -->
+      <div class="accordion" id="top4">
+        <h1 class="title">スキル</h1>
+        <dl>
+          <div>
+            <dt class="skillq">HTML</dt>
+            <dd class="skilla">基本的なコーディングできます。
+            </dd>
+          </div>
+          <div>
+            <dt class="skillq">CSS</dt>
+            <dd class="skilla">アニメーションできます。<br>
+              レスポンシブ対応できます。
+            </dd>
+          </div>
+          <div>
+            <dt class="skillq">JavaScript</dt>
+            <dd class="skilla">動きのあるサイト制作が得意です。<br>
+              ・モーダルウィンドウ<br>
+              ・タブメニュー<br>
+              ・アコーディオン<br>
+              ・カルーセル<br>
+              ・ハンバーガーメニュー<br>
+              など組み込み可能です。<br>
+              その他、jQuery対応可能です。
+            </dd>
+          </div>
+          <div>
+            <dt class="skillq">WordPress</dt>
+            <dd class="skilla">ブログサイト制作できます。
+          </div>
+        </dl>
+      </div>
+    </div><!--重ね閉じ-->
+  </div> <!--トビラ閉じ-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
