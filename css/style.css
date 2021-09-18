@@ -46,7 +46,6 @@ body{
   left: 0;
   bottom: 0;
   overflow: hidden;
-  margin-bottom: 10px;
 }
 
 #background1{
@@ -644,20 +643,11 @@ main{
   }
   }
 
-
-
-
-
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
+  footer{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    align-items: center;
+  }
